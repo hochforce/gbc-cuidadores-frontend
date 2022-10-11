@@ -1,0 +1,77 @@
+/* form{
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--primary-color);
+}
+
+form button,
+form .inputBox{
+  position: relative;
+  width: 40rem;
+}
+form .inputBox input,
+form textarea{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  border-radius: 3px;
+  outline: none;
+  color: var(--primary-color);
+  font-size: 1em;
+  font-family: "DM Sans";
+}
+form .inputBox span{
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: #C7C7CD;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+form .inputBox input:valid ~ span,
+form .inputBox input:focus ~ span{
+  color: var(--primary-color);
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: var(--brand-beige);
+  border-left: 1px solid var(--primary-color);
+  border-right: 1px solid var(--primary-color);
+  letter-spacing: 0.2em;
+}
+form .inputBox input:valid,
+form .inputBox input:focus{
+  border: 1px solid var(--primary-color);
+}
+form textarea{
+  width: 40rem; 
+  height: 150px;
+  resize: none;
+
+  text-transform: uppercase;
+}
+form textarea::placeholder{
+  color: #C7C7CD;
+}
+form .button{
+  padding: 10px;
+  margin-bottom: 3rem;
+  border: none;
+  background:  var(--primary-color);
+  border-radius: 3px;
+  outline: none;
+  color: var(--brand-light);
+  font-size: 1em;
+  font-weight: 700;
+  font-family: "DM Sans";
+  text-transform: uppercase;
+  cursor: pointer;
+}
+form .button:hover{
+  background-color: var(--brand-dark);
+} */
