@@ -10,6 +10,7 @@ function App() {
   const [itemServicesActive, setItemServicesActive] = useState(false)
   const [itemAboutActive, setItemAboutActive] = useState(false)
   const [itemContactActive, setItemContactActive] = useState(false)
+  
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 500);
@@ -48,10 +49,10 @@ function App() {
     const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
     // if (menuElement === 'home') {
     //   setItemHomeActive(true)
-      
+
     // } else {
     //   setItemHomeActive(false)
-      
+
     // }
     // if (menuElement === 'services') {
     //   setItemServicesActive(true)
@@ -82,7 +83,7 @@ function App() {
 
     const sectionId = home.getAttribute('id');
     const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
-    
+
     setItemHomeActive(false)
     if (sectionBoudaries) {
       setItemHomeActive(true)
@@ -107,7 +108,7 @@ function App() {
 
     const sectionId = about.getAttribute('id');
     const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
-    
+
     setItemAboutActive(false)
     if (sectionBoudaries) {
       setItemAboutActive(true)
@@ -132,7 +133,7 @@ function App() {
 
     const sectionId = contact.getAttribute('id');
     const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
-    
+
     setItemContactActive(false)
     if (sectionBoudaries) {
       setItemContactActive(true)
@@ -367,9 +368,10 @@ function App() {
                 </li>
               </ul>
               <FormComponent />
-              
+
+
               <a className="button" href="http://wa.me/5521990300876" target="_blank">
-              <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
+                <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
                 Ou via Whatsapp
               </a>
             </div>
@@ -432,8 +434,10 @@ function App() {
 
 
       <a className="floating-whatsapp" href="http://wa.me/5521990300876" target="_blank">
-        <img src="./src/assets/whatsapp-rounded-green.jpg" alt="Ícone reprensentando o whatsapp" />
+        <img src="./src/assets/whatsapp-rounded-green.png" alt="Ícone rep whatsapp" />
       </a>
+
+      
 
       <script src="https://unpkg.com/scrollreveal"></script>
       <script src="./main.js"></script>

@@ -1,3 +1,18 @@
+// import React from 'react'
+// import './modal.css'
+
+// export const ModalConfirm = ()=>{
+//   return (
+//     <div className="container">
+//       <div className="content">
+//         <h1>Email enviado!</h1>
+//         <p>Obrigado por entrar em contato conosco, vamos retornar o contato o mais rápido possível.</p>
+//         <a onClick={closeMenu} href="#home">Voltar para o site</a>
+//       </div>
+//     </div>
+//   )
+// }
+
 import { useState } from 'react'
 import axios from 'axios';
 import './app.css';
@@ -7,17 +22,15 @@ const api = axios.create({
   baseURL: 'https://gbc-cuidadores-backend.herokuapp.com/',
 });
 
-function FormComponent() {
+function ModalConfirm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [contact, setContact] = useState('')
   const [message, setMessage] = useState('')
-  const [messageSent, setMessageSent] = useState(false)
 
   async function handleSendEmail(e) {
     e.preventDefault();
-    setMessageSent(true)
-
+  
     await api.post("/", {
       name,
       email,
@@ -25,17 +38,10 @@ function FormComponent() {
       message
     })
 
-  }
-  function handleCloseModal(){
-    setMessageSent(false)
-    setName('')
-    setEmail('')
-    setContact('')
-    setMessage('')
+    console.log("Mensagem enviada!", name, message)
   }
 
   return (
-    <>
       <form onSubmit={handleSendEmail} className="App">
         <div className="inputBox">
           <input
@@ -72,15 +78,6 @@ function FormComponent() {
         ></textarea>
         <input className='button' type="submit" value="Enviar email" />
       </form>
-
-      <div id='modalConfirm' className={messageSent ? 'modal-confirm show' : 'modal-confirm'}>
-        <div className="content">
-          <h1>Email enviado!</h1>
-          <p>Obrigado por entrar em contato conosco, vamos retornar o contato o mais rápido possível.</p>
-          <a  onClick={handleCloseModal} href="#home">Voltar para o site</a>
-        </div>
-      </div>
-    </>
   )
 }
-export default FormComponent
+export default ModalConfirm

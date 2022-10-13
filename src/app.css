@@ -1000,6 +1000,50 @@ footer .social-links li a img {
 }
 
   
+/* ========MODAL CONFIRM======== */
 
+.modal-confirm{
+  display: none;
+}
+.modal-confirm.show{
+  display: initial;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-confirm.show .content{
+  width: 40rem;
+  padding: 3rem;
+  background: var(--brand-light);
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
 
+  border-radius: .6rem;
+
+  text-align: center;
+}
+.modal-confirm.show .content h1{
+  color: var(--primary-color);
+}
+.modal-confirm.show .content p{
+  color: var(--paragraph);
+}
+.modal-confirm.show .content a{
+  text-decoration: none;
+  background: var(--primary-color);
+  padding: 1.6rem;
+  color: var(--brand-light);
+  border-radius: .6rem;
+}
