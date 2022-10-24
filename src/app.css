@@ -26,6 +26,26 @@ html, body{
   width: 100%;
   height: 100%;
 }
+select {
+  -webkit-appearance: none;
+  /* Remove estilo padrão do Chrome */
+  -moz-appearance: none;
+  /* Remove estilo padrão do FireFox */
+  appearance: none;
+  /* Remove estilo padrão do FireFox*/
+  background: var(--brand-beige);
+  width: 40rem;
+  border: 1px solid var(--primary-color);
+  border-radius: .4rem;
+  padding: 1rem 3rem;
+  color: var(--primary-color);
+
+  font-size: 1.8rem;
+}
+select:hover{
+  background: var(--brand-light);
+}
+
 ul {
   list-style: none;
 }
@@ -136,7 +156,6 @@ button.open-menu path{
 #about .wrapper a  {
   margin-top: 3rem;
 }
-
 
 section header h4 {
   font-size: 1.4rem;
@@ -331,6 +350,83 @@ body.menu-expanded .menu{
   border-radius: 0.5rem;
 }
 
+/* ========NEW SERVICES======== */
+
+/* #new-services{
+  width: 100%;
+  height: 115rem;
+  margin: 0;
+  left: 0;
+  top: 0;
+  padding-block: 10rem;
+  background: var(--brand-light-2);
+}
+#new-services .content{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+#new-services .content .view{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 40rem;
+  gap: 2rem;
+}
+#new-services h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.08rem;
+  color: var(--primary-color);
+  text-align: justify;
+  text-transform: uppercase;
+}
+#new-services .content h3{
+  text-align: left;
+  width: min(40rem, 80%);
+  font-size: 2rem;
+  font-weight: 700; 
+}
+
+#new-services .content .button{
+  width: 40rem;
+  font-size: 1.5rem;
+}
+#new-services .content img{
+  width: min(40rem, 80%);
+  border-radius: 0.5rem;
+}
+#new-services .content .view img{
+  width: 24px;
+}
+
+#new-services .view .procedures{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-block: 3rem;
+}
+#new-services .view .procedures p,
+#about .content .procedures p{
+  display: flex;
+  text-align: left;
+  align-items: center;
+  gap: 1rem;
+}
+
+#new-services .view h5{
+  text-align: left;
+  color: var(--text-gray);
+  font-weight: 400;
+}
+#new-services img {
+  border-radius: 0.7rem;
+  size: 240px;
+} */
+
 /* ========SERVICES======== */
 
 #services header h2{
@@ -462,6 +558,11 @@ body.menu-expanded .menu{
   line-height: 3rem; 
 }
 
+#about a.button{
+  width: 40rem;
+  font-size: 1.5rem;
+}
+
 /* ========CONTACT======== */
 
 #contact {
@@ -586,6 +687,86 @@ body.menu-expanded .menu{
 #contact .button:hover{
   background-color: #007846;
 }
+
+/* ========HIRING======== */
+
+#hiring {
+  text-align: center;
+  background-color: var(--brand-beige);
+}
+#hiring .col-a,
+#hiring .col-b{
+  display: flex;
+  flex-direction: column;
+  align-itens: center;
+  text-align: left;
+  gap: 2rem;
+}
+#hiring header{
+  margin-bottom: 3.2rem;
+}
+#hiring header h3{
+  text-align: left;
+}
+#hiring .content{
+  display: flex;
+  flex-direction: column;
+  align-itens: center;
+}
+
+#hiring .content form{
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-itens: center;
+  text-align: left;
+  gap: 2rem;
+  color: var(--primary-color);
+}
+#hiring .content form select,
+#hiring .content form .button,
+#hiring .content form .inputBox{
+  position: relative;
+  width: 35rem;
+}
+#hiring .content form .inputBox input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  border-radius: 3px;
+  outline: none;
+  color: var(--primary-color);
+  font-size: 1em;
+  font-family: "DM Sans";
+}
+
+#hiring select{
+  font-size: 1.6rem;
+}
+#hiring label{
+  font-size: 1.8rem;
+  
+}
+
+#hiring .content form .button{
+  padding: 10px;
+  margin-bottom: 3rem;
+  border: none;
+  background:  var(--primary-color);
+  border-radius: 3px;
+  outline: none;
+  color: var(--brand-light);
+  font-size: 1em;
+  font-weight: 700;
+  font-family: "DM Sans";
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#hiring .content form .button:hover{
+  background-color: var(--brand-dark);
+}
+
 
 
 /* ========FOOTER======== */
@@ -803,7 +984,7 @@ footer .social-links li a img {
   }
   #home{
     width: 100%;
-    height: 75rem;
+    height: 80rem;
     margin: 0;
     left: 0;
     top: 0;
@@ -813,7 +994,7 @@ footer .social-links li a img {
     background: var(--brand-light);
     background-image: url(./assets/senior-woman-with-her-caregiver-outdoor-light.jpg);
     width: 100%;
-    height: 700px;
+    height: 75rem;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 120rem;
@@ -857,10 +1038,70 @@ footer .social-links li a img {
     font-size: 2rem;
   }
 
+  /* ========NEW SERVICES======== */
+  /* #new-services .content img{
+    display: none;
+  }
+  #new-services .content .view img{
+    display: initial;
+  }
+  #new-services .content .view{
+    display: initial;
+  }
+  #new-services{
+    width: 100%;
+    height: 75rem;
+    margin: 0;
+    left: 0;
+    top: 0;
+   padding: 0;
+  }
+  #new-services .content{
+    background: var(--brand-light);
+    background-image: url(./assets/cuidadora-de-idosa.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120rem;
+    background-position: 0px 0px;
+
+    padding: 10rem 65rem;
+
+    display: flex;
+    flex-direction: row;
+  }
+  #new-services .content .view{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 36rem;
+    gap: 1rem;
+  }
+  
+  #new-services .content h3{
+    width: 37rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700; 
+  }
+  #new-services .content h4{
+    margin-top: 2rem;
+  }
+  #new-services .content .button{ 
+    width:30rem;
+    font-size: 1.8rem;
+   }
+  #new-services .procedures p{
+    width: 36rem;
+    font-size: 1.5rem;
+  } */
+  
+
   /* ========SERVICES======== */
   
   #services{
-    padding-bottom: 0;
+    padding: 11rem 0 0 0;
   }
   #services .wrapper{
     grid-template-columns: 60.5rem 1fr;
@@ -903,7 +1144,11 @@ footer .social-links li a img {
     width: 30%;
     flex-grow: 1;
   }
+
   /* ========ABOUT======== */
+  #about{
+    padding: 11rem 0 0 0;
+  }
   #about .wrapper {
     grid-template-columns: 48rem 1fr;
     grid-template-areas: 'A B';
@@ -928,9 +1173,13 @@ footer .social-links li a img {
   }
   
   /* ========CONTACT======== */
+  #contact{
+    padding: 11rem 0 0 0;
+  }
   #contact .wrapper {
     grid-template-columns: 1fr 57.5rem;
     grid-template-areas: 'A B';
+    
   }
   #contact .col-a header h3{
     font-size: 3rem;
@@ -958,6 +1207,28 @@ footer .social-links li a img {
     font-size: 3.8rem;
     /* width: 40.4rem; */
   }
+
+  /* ========HIRING======== */
+  #hiring h3{
+    font-size: 3rem;
+    line-height: 3.9rem;
+
+    color: var(--primary-color);
+  }
+  #hiring form{
+    align-items: flex-start;
+  }
+  #hiring form .col-a{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  #hiring form .col-b{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
   
   /* ========FOOTER======== */
   footer {
@@ -987,7 +1258,39 @@ footer .social-links li a img {
     
     background-size: 160rem;
     background-position: 0px -70px;
+
+    padding: 5rem 30rem;
   } 
+  #new-services .content{
+    background-size: 150rem;
+    background-position: 0px 0px;
+
+    padding: 5rem 82rem;
+  } 
+  
+  #new-services .content .view{
+    width: 35rem;
+    align-items: flex-start;
+  }
+  
+  
+  #new-services .content h3{
+    width: 35rem;
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  #new-services .content .button{ 
+    width:35rem;
+    font-size: 2rem;
+   }
+   #new-services .content .procedures{
+    padding: 0;
+   }
+  #new-services .procedures p{
+    width: 35rem;
+    font-size: 1.5rem;
+  }
 }
 @media (min-width: 1501px) {
   #home .content{
@@ -995,8 +1298,41 @@ footer .social-links li a img {
     background-size: 205rem;
     background-position: 0px -70px;
 
-    padding: 5rem 40rem;
+    padding: 5rem 50rem;
   } 
+  #new-services{
+    height: 90rem;
+  }
+  #new-services .content{
+    background-size: 200rem;
+    background-position: 0px 0px;
+
+    padding: 5rem 115rem;
+  } 
+  
+  #new-services .content .view{
+    width: 50rem;
+    align-items: flex-start;
+  }
+  
+  
+  #new-services .content h3{
+    width: 55rem;
+    font-size: 2.4rem;
+    text-align: left;
+  }
+  
+  #new-services .content .button{ 
+    width:35rem;
+    font-size: 2rem;
+   }
+   #new-services .content .procedures{
+    padding: 0;
+   }
+  #new-services .procedures p{
+    width: 50rem;
+    font-size: 2rem;
+  }
 }
 
   

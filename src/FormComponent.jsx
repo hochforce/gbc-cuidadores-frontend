@@ -73,7 +73,7 @@ function FormComponent() {
         <input className='button' type="submit" value="Enviar email" />
       </form>
 
-      <div id='modalConfirm' className={messageSent ? 'modal-confirm show' : 'modal-confirm'}>
+      <div id='modalConfirm' className={messageSent ? 'modal-confirm show' : 'modal-confirm '}>
         <div className="content">
           <h1>Email enviado!</h1>
           <p>Obrigado por entrar em contato conosco, vamos retornar o contato o mais rápido possível.</p>

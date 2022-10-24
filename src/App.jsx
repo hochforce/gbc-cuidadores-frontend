@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Iframe from 'react-iframe'
 import FormComponent from './FormComponent';
+import FormHiringComponent from './FormHiringComponent';
 import './app.css';
 
 function App() {
@@ -10,10 +11,12 @@ function App() {
   const [itemServicesActive, setItemServicesActive] = useState(false)
   const [itemAboutActive, setItemAboutActive] = useState(false)
   const [itemContactActive, setItemContactActive] = useState(false)
-  
+  const [itemHiringActive, setItemHiringActive] = useState(false)
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 500);
+      activateMenuHiring()
       activateMenuServices()
       activateMenuContact()
       activateMenuAbout()
@@ -23,9 +26,11 @@ function App() {
 
   function openMenu() {
     setMenuOpen(true)
+    
   }
   function closeMenu() {
     setMenuOpen(false)
+    
   }
 
   function activateMenuServices() {
@@ -139,32 +144,56 @@ function App() {
       setItemContactActive(true)
     }
   }
+  function activateMenuHiring() {
+    const targetLine = scrollY + innerHeight / 2;
+
+    //Verificar se a seção passou da linha imaginária (targetLine)
+    const sectionTop = hiring.offsetTop;
+    const sectionHeight = hiring.offsetHeight;
+    const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop;
+
+    // console.log('O topo da seção chegou ou passou da linha?', sectionTopReachOrPassedTargetLine)
+
+    const sectionEndsAt = sectionTop + sectionHeight;
+    const sectionEndPassedTargetLine = sectionEndsAt <= targetLine;
+
+    // console.log(' O fundo da seção passou da linha?', sectionEndPassedTargetLine)
+
+    const sectionBoudaries = sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
+
+    const sectionId = hiring.getAttribute('id');
+    const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
+
+    setItemHiringActive(false)
+    if (sectionBoudaries) {
+      setItemHiringActive(true)
+    }
+  }
 
   return (
     <body className={menuOpen ? 'menu-expanded' : ''}>
       <nav id="navigation" className="scroll">
         <div className="wrapper">
           <a href="#" className="logo" >
-            <img className="logo-white" src="./src/assets/logo-horizontal-white.png" alt="" />
+            <img className="logo-white" src="./src/assets/logo-horizontal-white.png" alt="Logo marca do site com o formato de um coração e uma mão apoiando-o." />
           </a>
 
           <div className="menu">
             <ul>
-              <li><a className={itemHomeActive ? 'active' : ''} onclick={closeMenu} href="#home"> INÍCIO</a></li>
-              <li><a className={itemServicesActive ? 'active' : ''} onclick={closeMenu} href="#services"> SERVIÇOS</a></li>
-              <li><a className={itemAboutActive ? 'active' : ''} onclick={closeMenu} href="#about"> SOBRE NÓS</a></li>
-              <li><a className={itemContactActive ? 'active' : ''} onclick={closeMenu} href="#contact"> CONTATO</a></li>
-              <li><a onclick={closeMenu} href="https://chat.whatsapp.com/Co6FxoGM8e2HN1zNjJ9dyX" target="_blank"> TRABALHE
-                CONOSCO</a></li>
+              <li><a className={itemHomeActive ? 'active' : ''} onClick={closeMenu} href="#home"> INÍCIO</a></li>
+              <li><a className={itemServicesActive ? 'active' : ''} onClick={closeMenu} href="#services"> SERVIÇOS</a></li>
+              <li><a className={itemAboutActive ? 'active' : ''} onClick={closeMenu} href="#about"> SOBRE NÓS</a></li>
+              <li ><a className={itemContactActive ? 'active' : ''} onClick={closeMenu} href="#contact"> CONTATO</a></li>
+              <li><a className={itemHiringActive ? 'active' : ''} onClick={closeMenu} href="#hiring"> TRABALHE CONOSCO</a></li>
             </ul>
 
             <h4>Clique aqui e acesse nossas redes sociais</h4>
             <ul className="social-links">
-              <li><a target="_blank" href="https://facebook.com/gbc_cuidadores"><img src="./src/assets/facebook.svg" alt="" /></a>
+              <li><a onClick={closeMenu} target="_blank" href="https://www.facebook.com/profile.php?id=100086315213394"><img src="./src/assets/facebook.svg" alt="Logo marca do facebook" /></a>
               </li>
-              <li><a target="_blank" href="https://instagram.com/gbc_cuidadores"><img src="./src/assets/instagram.svg"
-                alt="" /></a></li>
-              <li><a target="_blank" href="http://wa.me/5521990300876"><img src="./src/assets/whatsapp-rounded.svg" alt="" /></a>
+              <li><a onClick={closeMenu} target="_blank" href="https://instagram.com/gbcweb"><img src="./src/assets/instagram.svg"
+                alt="Logo marca do instagram" /></a></li>
+              <li><a onClick={closeMenu} target="_blank" href="http://wa.me/5521990300876"><img src="./src/assets/whatsapp-rounded.svg" alt="Logo marca do whatsapp" /></a>
               </li>
             </ul>
           </div>
@@ -192,8 +221,6 @@ function App() {
               </defs>
             </svg>
           </button>
-
-
 
           <button aria-expanded="true" aria-label="Fechar menu" className="close-menu" onClick={closeMenu}>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -223,11 +250,71 @@ function App() {
               QUERO UM ORÇAMENTO
             </a>
           </div>
-          <img src="./src/assets/senior-woman-with-her-caregiver-outdoor-light.jpg" alt="" />
+          <img src="./src/assets/senior-woman-with-her-caregiver-outdoor-light.jpg" alt="Imagem de mulher idosa sentada em uma cadeira de rodas sorrindo para uma enfermeira que está perto dela." />
 
         </div>
 
       </section>
+      {/* <section id="new-services" >
+        <div className="content">
+          <div className="view">
+            <h4>Serviços</h4>
+            <h3>Além de fornecer cuidadores de idosos e profissionais de enfermagem capacitados, realizamos* alguns
+              procedimentos específicos</h3>
+            <div className="procedures">
+              <p>
+                <img src="./src/assets/check.png"
+                  alt=" verde com um visto no meio representando um ícone de check list" />
+                Administração de medicamentos
+              </p>
+              <p>
+                <img src="./src/assets/check.png"
+                  alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                Curativos pós-operatórios
+              </p>
+              <p>
+                <img src="./src/assets/check.png"
+                  alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                Curativos para escaras (Lesão por pressão)
+              </p>
+              <p>
+                <img src="./src/assets/check.png"
+                  alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                Sondagem vesical e enteral
+              </p>
+              <p>
+                <img src="./src/assets/check.png"
+                  alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                Administração de antibioticoterapia
+              </p>
+              <p>
+                <img src="./src/assets/check.png"
+                  alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                Esvaziamento e higienização de bolsas de colostomia
+              </p>
+              <p>
+                <img src="./src/assets/check.png"
+                  alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                Acompanhamento em unidades hospitalares
+              </p>
+              <p>
+                <img src="./src/assets/check.png"
+                  alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                Coleta e encaminhamento de material para laboratório
+              </p>
+            </div>
+            <h5>
+              * Todo material deve ser disponibilizado pelo familiar.<br />
+              * Entre em contato para outros tipos de procedimentos.<br />
+              * Verificar o valor e a disponibilidade local.
+            </h5>
+            <a className="button" href="#contact">
+              QUERO UM ORÇAMENTO
+            </a>
+          </div>
+          <img src="./src/assets/cuidadora-de-idosa.jpg" alt="" />
+        </div>
+      </section> */}
 
       <section id="services" >
         <div className="wrapper">
@@ -311,7 +398,7 @@ function App() {
                   <img src="./src/assets/check.png"
                     alt="Bolinha verde com um visto no meio representando um ícone de check list" />
                   Os Gestores do “GRUPO BEM CUIDAR” possuem mais de 25 anos de experiência na assistência e nos cuidados com
-                  idosos, por isso entendemos suas necessidades
+                  idosos, por isso, entendemos suas necessidades
                 </p>
                 <p>
                   <img src="./src/assets/check.png"
@@ -364,7 +451,7 @@ function App() {
                 </li>
                 <li>
                   <i className="bi bi-envelope "></i>
-                  contato@grupobemcuidar.com.br
+                  contato.gbcweb@gmail.com
                 </li>
               </ul>
               <FormComponent />
@@ -377,31 +464,48 @@ function App() {
             </div>
           </div>
           <div className="col-b">
-            <img src="./src/assets/notebook-on-the-table.jpg" alt="Homen negro com moletom bege mexendo no celular e sorrindo." />
+            <img src="./src/assets/notebook-on-the-table.jpg" alt="Imagem de uma mão segurando um celular cinza sobre um notebook." />
             {/* Photo by <a href="https://unsplash.com/@firmbee?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Firmbee.com</a> on <a href="https://unsplash.com/s/photos/contact?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
           </div>
         </div>
       </section>
+      {/* <section id="hiring">
+        <div className="wrapper">
+
+          <header>
+            <h4>Trabalhe conosco</h4>
+            <h3>Você cuidador ou profissional da saúde, junte-se a nós. Venha trabalhar na empresa que mais cresce no segmento, seja parte da nossa família o Grupo Bem Cuidar.</h3>
+          </header>
+
+          <div className="content">
+            <FormHiringComponent />
+          </div>
+
+
+        </div>
+      </section> */}
 
       <footer>
         <div className="wrapper">
           <div className="col-a">
             <a href="#" className="logo">
-              <img className="logo-white" src="./src/assets/logo-horizontal-white.png" alt="" />
+              <img className="logo-white" src="./src/assets/logo-horizontal-white.png" alt="Logo marca do site em formado de um coração com uma mão apoiando-o." />
             </a>
             <p>
-              GRUPO BEM CUIDAR - CUIDANDO DE PESSOAS
+              GBC ASSISTÊNCIA E PRESTAÇÃO DE SERVIÇOS DE SAÚDE LTDA
+            </p>
+            <p>
               48.127.791/0001-41
             </p>
           </div>
           <div className="col-b">
             <h4>Clique aqui e acesse nossas redes sociais</h4>
             <ul className="social-links">
-              <li><a target="_blank" href="https://facebook.com/gbc_cuidadores"><img src="./src/assets/facebook.svg" alt="" /></a>
+              <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100086315213394"><img src="./src/assets/facebook.svg" alt="Logo marca do facebook" /></a>
               </li>
-              <li><a target="_blank" href="https://instagram.com/gbc_cuidadores"><img src="./src/assets/instagram.svg"
-                alt="" /></a></li>
-              <li><a target="_blank" href="http://wa.me/5521990300876"><img src="./src/assets/whatsapp-rounded.svg" alt="" /></a>
+              <li><a target="_blank" href="https://instagram.com/gbcweb"><img src="./src/assets/instagram.svg"
+                alt="Logo marca do instagram" /></a></li>
+              <li><a target="_blank" href="http://wa.me/5521990300876"><img src="./src/assets/whatsapp-rounded.svg" alt="Logo marca do whatsapp" /></a>
               </li>
             </ul>
 
@@ -437,7 +541,7 @@ function App() {
         <img src="./src/assets/whatsapp-rounded-green.png" alt="Ícone rep whatsapp" />
       </a>
 
-      
+
 
       <script src="https://unpkg.com/scrollreveal"></script>
       <script src="./main.js"></script>
