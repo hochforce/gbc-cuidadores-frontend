@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,500;0,700;1,400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --hue: 199;
+  --primary-color: hsl(var(--hue), 100%, 26%);
+  --headline: hsl(210, 11%, 15%);
+  --paragraph: hsl(210, 9%, 31%);
+  --brand-beige: hsl(189, 100%, 97%);
+  --brand-light: hsl(calc(var(--hue) - 22), 23%, 89%);
+  --brand-light-2: hsl(calc(var(--hue) + 10), 14%, 97%);
+  --bg-light: hsl(180, 14%, 97%);
+  --brand-dark: hsl(var(--hue), 100%, 14%);
+  --text-gray: hsl(210, 6%, 54%);
+  --nav-height: 10rem;
+  font-size: 62.5%;
+}
+body{
+  font-family: "DM Sans";
+}
+.container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  z-index: 100;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container img{
+  width: 40rem;
+  margin-bottom: 5rem;
+}
+.content{
+  
+  width: 90rem;
+  padding: 10rem 15rem;
+  background: var(--brand-beige);
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+
+  border-radius: .6rem;
+
+  text-align: center;
+}
+
+.content h1{
+  color: var(--primary-color);
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+.content p{
+  font-size: 2rem;
+}
+
+.content a{
+  text-decoration: none;
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  gap: 2rem;
+
+  border-radius: .6rem;
+
+}
+.content a img{
+  width: 3rem;
+  margin: 0;
+}
