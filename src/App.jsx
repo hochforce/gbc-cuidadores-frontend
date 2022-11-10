@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Iframe from 'react-iframe'
 import FormComponent from './FormComponent';
-import FormHiringComponent from './FormHiringComponent';
 import './app.css';
 
 function App() {
@@ -26,11 +25,11 @@ function App() {
 
   function openMenu() {
     setMenuOpen(true)
-    
+
   }
   function closeMenu() {
     setMenuOpen(false)
-    
+
   }
 
   function activateMenuServices() {
@@ -184,12 +183,12 @@ function App() {
               <li><a className={itemServicesActive ? 'active' : ''} onClick={closeMenu} href="#services"> SERVIÇOS</a></li>
               <li><a className={itemAboutActive ? 'active' : ''} onClick={closeMenu} href="#about"> SOBRE NÓS</a></li>
               <li ><a className={itemContactActive ? 'active' : ''} onClick={closeMenu} href="#contact"> CONTATO</a></li>
-              <li><a className={itemHiringActive ? 'active' : ''} onClick={closeMenu} href="#hiring"> TRABALHE CONOSCO</a></li>
+              <li ><a  className={itemHiringActive ? 'active' : ''} onClick={closeMenu} href="#hiring">TRABALHE CONOSCO</a></li>
             </ul>
 
             <h4>Clique aqui e acesse nossas redes sociais</h4>
             <ul className="social-links">
-              <li><a onClick={closeMenu} target="_blank" href="https://www.facebook.com/profile.php?id=100086315213394"><img src="./src/assets/facebook.svg" alt="Logo marca do facebook" /></a>
+              <li><a onClick={closeMenu} target="_blank" href="https://www.facebook.com/profile.php?id=100087360336800"><img src="./src/assets/facebook.svg" alt="Logo marca do facebook" /></a>
               </li>
               <li><a onClick={closeMenu} target="_blank" href="https://instagram.com/gbcweb"><img src="./src/assets/instagram.svg"
                 alt="Logo marca do instagram" /></a></li>
@@ -397,7 +396,7 @@ function App() {
                 <p>
                   <img src="./src/assets/check.png"
                     alt="Bolinha verde com um visto no meio representando um ícone de check list" />
-                  Os Gestores do “GRUPO BEM CUIDAR” possuem mais de 25 anos de experiência na assistência e nos cuidados com
+                  Os Gestores da empresa GBC (Grupo Bem Cuidar) possuem mais de 25 anos de experiência na assistência e nos cuidados com
                   idosos, por isso, entendemos suas necessidades
                 </p>
                 <p>
@@ -451,7 +450,7 @@ function App() {
                 </li>
                 <li>
                   <i className="bi bi-envelope "></i>
-                  contato.gbcweb@gmail.com
+                  contato.gbcsaude@gmail.com
                 </li>
               </ul>
               <FormComponent />
@@ -461,29 +460,52 @@ function App() {
                 <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
                 Ou via Whatsapp
               </a>
+              <i>*Exclusivo para clientes</i>
             </div>
           </div>
           <div className="col-b">
-            <img src="./src/assets/notebook-on-the-table.jpg" alt="Imagem de uma mão segurando um celular cinza sobre um notebook." />
+            <img className='notebook' src="./src/assets/notebook-on-the-table.jpg" alt="Imagem de uma mão segurando um celular cinza sobre um notebook." />
             {/* Photo by <a href="https://unsplash.com/@firmbee?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Firmbee.com</a> on <a href="https://unsplash.com/s/photos/contact?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
           </div>
         </div>
       </section>
-      {/* <section id="hiring">
+      <section id="hiring">
         <div className="wrapper">
+          <div className="col-a">
+            <header>
+              <h4>Trabalhe conosco</h4>
+              <h3>Você cuidador ou profissional da saúde, venha trabalhar na empresa que mais cresce no segmento, seja parte da família GBC (Grupo Bem Cuidar).</h3>
+              <p>*Entre no grupo do seu Estado e envie seu currículo</p>
+            </header>
 
-          <header>
-            <h4>Trabalhe conosco</h4>
-            <h3>Você cuidador ou profissional da saúde, junte-se a nós. Venha trabalhar na empresa que mais cresce no segmento, seja parte da nossa família o Grupo Bem Cuidar.</h3>
-          </header>
+            <div className="content">
 
-          <div className="content">
-            <FormHiringComponent />
+              <a className="button" href="https://chat.whatsapp.com/Co6FxoGM8e2HN1zNjJ9dyX" target="_blank">
+                <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
+                Rio de Janeiro
+              </a>
+              <a className="button" href="https://chat.whatsapp.com/B52HObo19Gs0guVQFz0vSO" target="_blank">
+                <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
+                São Paulo
+              </a>
+              <a className="button" href="https://chat.whatsapp.com/DFE16VB3BQ6509Xf6w4XrT" target="_blank">
+                <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
+                Brasília
+              </a>
+              <a className="button" href="https://chat.whatsapp.com/B9fJobNwwrGDejoHnJQadO" target="_blank">
+                <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
+                Espírito Santo
+              </a>
+            </div>
+          </div>
+          <div className="col-b">
+          <img className='notebook' src="./src/assets/handshake-close-up-of-executives.jpg" alt="Imagem de um aperto de mão." />
+           
           </div>
 
 
         </div>
-      </section> */}
+      </section>
 
       <footer>
         <div className="wrapper">
@@ -501,7 +523,7 @@ function App() {
           <div className="col-b">
             <h4>Clique aqui e acesse nossas redes sociais</h4>
             <ul className="social-links">
-              <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100086315213394"><img src="./src/assets/facebook.svg" alt="Logo marca do facebook" /></a>
+              <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100087360336800"><img src="./src/assets/facebook.svg" alt="Logo marca do facebook" /></a>
               </li>
               <li><a target="_blank" href="https://instagram.com/gbcweb"><img src="./src/assets/instagram.svg"
                 alt="Logo marca do instagram" /></a></li>
@@ -513,7 +535,7 @@ function App() {
           <div className="col-c">
             <p>
 
-              Avenida Marechal Câmara,160, Edifício Orly, Sala 1107, Condomínio Centro Empresarial Charles de Gaulle,
+              Avenida Marechal Câmara 160, Edifício Orly, Sala 1107, Condomínio Centro Empresarial Charles de Gaulle,
               Centro, Rio de Janeiro - RJ, 20020-080
             </p>
             <Iframe
@@ -537,9 +559,9 @@ function App() {
       </a>
 
 
-      <a className="floating-whatsapp" href="http://wa.me/5521990300876" target="_blank">
+      {/* <a className="floating-whatsapp" href="http://wa.me/5521990300876" target="_blank">
         <img src="./src/assets/whatsapp-rounded-green.png" alt="Ícone rep whatsapp" />
-      </a>
+      </a> */}
 
 
 

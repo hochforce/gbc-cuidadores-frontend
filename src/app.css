@@ -223,6 +223,18 @@ nav .menu,
 nav .close-menu {
   position: fixed;
 }
+nav#navigation .menu li:nth-child(5){
+  background: var(--brand-light);
+  border-radius: 4px;
+  padding-inline: 10px;
+  
+  
+}
+nav#navigation .menu li:nth-child(5) a{
+ color: var(--primary-color);
+ opacity: 1;
+ font-weight: 700;
+}
 
 
 .menu ul:nth-child(1) {
@@ -574,6 +586,9 @@ body.menu-expanded .menu{
 #contact img{
   border-radius: 0.7rem;
 }
+#contact .notebook{
+  margin-top: 3rem;
+}
 #contact header{
   margin-bottom: 3.2rem;
 }
@@ -642,6 +657,20 @@ body.menu-expanded .menu{
 #contact .content form .inputBox input:focus{
   border: 1px solid var(--primary-color);
 }
+#contact .content form .inputBoxGroup {
+  display: flex;
+  width: 40rem;
+  gap: 1rem;
+}
+#contact .content form .inputBoxGroup select {
+  width: 19.5rem;
+  background: transparent;
+  padding: 10px;
+  color: var(--primary-color);
+}
+#contact .content form .inputBoxGroup select option{
+  color: var(--primary-color);
+}
 #contact .content form textarea{
   width: 40rem; 
   height: 150px;
@@ -671,7 +700,7 @@ body.menu-expanded .menu{
 }
 #contact .button{
   padding: 10px;
-  margin-bottom: 3rem;
+  margin-bottom: 0.4rem;
   border: none;
   background:  #00AD64;
   border-radius: 3px;
@@ -688,33 +717,70 @@ body.menu-expanded .menu{
   background-color: #007846;
 }
 
+
 /* ========HIRING======== */
 
 #hiring {
   text-align: center;
   background-color: var(--brand-beige);
 }
-#hiring .col-a,
-#hiring .col-b{
-  display: flex;
-  flex-direction: column;
-  align-itens: center;
-  text-align: left;
-  gap: 2rem;
+#hiring .wrapper{
+  
 }
+
 #hiring header{
   margin-bottom: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 #hiring header h3{
+  text-align: left;
+}
+#hiring header p{
+  margin-top: 2rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
   text-align: left;
 }
 #hiring .content{
   display: flex;
   flex-direction: column;
   align-itens: center;
+  
+}
+#hiring .content .button{
+  padding: 1rem 1rem;
+  margin-bottom: 3rem;
+  border: none;
+  background:  #00AD64;
+  border-radius: 3px;
+  outline: none;
+  color: white;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: "DM Sans";
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 25rem;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;  
+}
+#hiring .content .button img{
+  margin-inline: 1rem;
+}
+#hiring .button:hover{
+  background-color: #007846;
 }
 
-#hiring .content form{
+#hiring img{
+  border-radius: 1rem;
+}
+
+/* #hiring .content form{
   margin-right: 3rem;
   display: flex;
   flex-direction: column;
@@ -765,7 +831,7 @@ body.menu-expanded .menu{
 }
 #hiring .content form .button:hover{
   background-color: var(--brand-dark);
-}
+} */
 
 
 
@@ -805,7 +871,7 @@ footer .social-links li a img {
 #backToTopButton{
   position: fixed;
   z-index: 20;
-  bottom: 6rem;
+  bottom: 2rem;
   right: 2.5rem;
   
   opacity: 0;
@@ -974,7 +1040,16 @@ footer .social-links li a img {
     filter: brightness(1.3);
     border: none;
   }
-
+  nav#navigation.scroll .menu li:nth-child(5){
+    background: var(--brand-light);
+    border-radius: 4px;
+    padding-inline: 10px;
+  }
+  nav#navigation.scroll .menu li:nth-child(5) a{
+    color: var(--primary-color);
+    opacity: 1;
+    font-weight: 700;
+  }
   /* ========HOME======== */
   #home .content img{
     display: none;
@@ -1188,6 +1263,9 @@ footer .social-links li a img {
   #contact .col-a .content ul li{
     font-size: 2rem;
   }
+  #contact .col-a .content p{
+    margin-top: -30px
+  }
   #contact .col-b {
     align-self: top;
     width: 100%;
@@ -1209,13 +1287,48 @@ footer .social-links li a img {
   }
 
   /* ========HIRING======== */
+
+  #hiring .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'B A';
+  }
   #hiring h3{
     font-size: 3rem;
     line-height: 3.9rem;
 
     color: var(--primary-color);
   }
-  #hiring form{
+  #hiring .col-a{
+    margin-left: 4rem;
+  }
+  #hiring .col-a .content{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  #hiring .col-a header p{
+    text-align: left;
+  }
+  #hiring .col-a .content .button{
+    margin-block: 1rem;
+  }
+  #hiring .col-b{
+    background-image: url(./assets/handshake-close-up-of-executives.jpg);
+    width: 95%;
+    height: 70rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 115rem;
+    background-position: -200px -100px;
+    border-radius: 4px;
+    padding: 5rem 30rem;
+
+    
+  }
+  #hiring .col-b img{
+    display: none;
+  }
+  /* #hiring form{
     align-items: flex-start;
   }
   #hiring form .col-a{
@@ -1227,7 +1340,7 @@ footer .social-links li a img {
     flex-direction: row;
     justify-content: space-between;
     gap: 0.5rem;
-  }
+  } */
 
   
   /* ========FOOTER======== */
@@ -1372,6 +1485,7 @@ footer .social-links li a img {
 }
 .modal-confirm.show .content h1{
   color: var(--primary-color);
+  margin-bottom: 2rem;
 }
 .modal-confirm.show .content p{
   color: var(--paragraph);
@@ -1382,4 +1496,12 @@ footer .social-links li a img {
   padding: 1.6rem;
   color: var(--brand-light);
   border-radius: .6rem;
+}
+
+.modal-confirm.error .content h1{
+  color: #f44336;
+  margin-bottom: 2rem;
+}
+.modal-confirm.error .content a{
+  background: #f44336;
 }

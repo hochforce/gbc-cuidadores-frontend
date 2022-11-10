@@ -1,18 +1,3 @@
-// import React from 'react'
-// import './modal.css'
-
-// export const ModalConfirm = ()=>{
-//   return (
-//     <div className="container">
-//       <div className="content">
-//         <h1>Email enviado!</h1>
-//         <p>Obrigado por entrar em contato conosco, vamos retornar o contato o mais rápido possível.</p>
-//         <a onClick={closeMenu} href="#home">Voltar para o site</a>
-//       </div>
-//     </div>
-//   )
-// }
-
 import { useState } from 'react'
 import axios from 'axios';
 import './app.css';
