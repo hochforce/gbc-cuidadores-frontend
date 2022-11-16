@@ -183,7 +183,7 @@ function App() {
               <li><a className={itemServicesActive ? 'active' : ''} onClick={closeMenu} href="#services"> SERVIÇOS</a></li>
               <li><a className={itemAboutActive ? 'active' : ''} onClick={closeMenu} href="#about"> SOBRE NÓS</a></li>
               <li ><a className={itemContactActive ? 'active' : ''} onClick={closeMenu} href="#contact"> CONTATO</a></li>
-              <li ><a  className={itemHiringActive ? 'active' : ''} onClick={closeMenu} href="#hiring">TRABALHE CONOSCO</a></li>
+              <li ><a className={itemHiringActive ? 'active' : ''} onClick={closeMenu} href="#hiring">TRABALHE CONOSCO</a></li>
             </ul>
 
             <h4>Clique aqui e acesse nossas redes sociais</h4>
@@ -386,11 +386,14 @@ function App() {
 
       <section id="about">
         <div className="wrapper">
-          <div className="col-a">
+          <div className="col-c">
             <header>
               <h4>Sobre nós</h4>
-              <h3>Nosso diferencial</h3>
+              <h3>Principais vantagens ao se contratar a empresa GBC (Grupo Bem Cuidar)</h3>
+
             </header>
+          </div>
+          <div className="col-a">
             <div className="content">
               <div className="procedures">
                 <p>
@@ -402,36 +405,69 @@ function App() {
                 <p>
                   <img src="./src/assets/check.png"
                     alt="Bolinha verde com um visto no meio representando um ícone de check list" />
-                  Equipe de cuidadores de idosos experiente e humanizada
+                  Temos como diferencial a agilidade na resolução dos problemas
                 </p>
                 <div className="paragraph">
                   <img src="./src/assets/check.png"
                     alt="Bolinha verde com um visto no meio representando um ícone de check list" />
                   <p>
-                    Nossos profissionais são selecionados <strong>rigorosamente</strong>
+                    Nossa equipe de cuidadores e técnicos são selecionados rigorosamente e passam por treinamentos constantes
                   </p>
                 </div>
                 <p>
                   <img src="./src/assets/check.png"
                     alt="Bolinha verde com um visto no meio representando um ícone de check list" />
-                  Atendimento 24hs por dia
+                  A cobertura em casos de faltas e atestados é feita de forma imediata
+                </p>
+                <p>
+                  <img src="./src/assets/check.png"
+                    alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                  O cliente não cria nenhum vínculo empregatício com o cuidador
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-b">
+            <div className="content">
+              <div className="procedures">
+                <p>
+                  <img src="./src/assets/check.png"
+                    alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                  Caso já tenha feito orçamento com outra empresa, nosso financeiro avalia a possibilidade de COBRIR O VALOR
+                </p>
+                <p>
+                  <img src="./src/assets/check.png"
+                    alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                  O nosso cliente consegue contato com o responsável administrativo e coordenador de enfermagem 24h por dia e 7 dias por semana
                 </p>
 
+                <p>
+                  <img src="./src/assets/check.png"
+                    alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                  Trabalhamos para conseguir sempre o menor orçamento do mercado
+                </p>
+                <p>
+                  <img src="./src/assets/check.png"
+                    alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                  Todo tipo de pagamento só deve ser realizado diretamente à empresa
+                </p>
+                <p>
+                  <img src="./src/assets/check.png"
+                    alt="Bolinha verde com um visto no meio representando um ícone de check list" />
+                  O cliente tem a liberdade de solicitar a troca do profissional sempre que achar necessário
+                </p>
               </div>
-              <p>
-                Tudo isso para você ter a tranquilidade e a certeza de que seu familiar está em boas mãos.
-              </p>
             </div>
+          </div>
+          <div className="col-d">
+            <p>
+              Tudo isso para você ter a tranquilidade e a certeza de que seu familiar está em boas mãos.
+            </p>
             <a className="button" href="#contact">
               QUERO UM ORÇAMENTO
             </a>
           </div>
-          <div className="col-b">
-            <div className="office"></div>
-            <i>*Nosso Escritório</i>
-          </div>
         </div>
-
       </section>
 
       <section id="contact">
@@ -446,11 +482,15 @@ function App() {
               <ul>
                 <li>
                   <i className="bi bi-telephone "></i>
-                  (21) 2042 4233
+                  (21) 2042-4233
+                </li>
+                <li>
+                <i className="bi bi-whatsapp"></i>
+                  (21) 99030-0876
                 </li>
                 <li>
                   <i className="bi bi-envelope "></i>
-                  contato.gbcsaude@gmail.com
+                  contato@gbcsaude.com.br
                 </li>
               </ul>
               <FormComponent />
@@ -474,33 +514,21 @@ function App() {
           <div className="col-a">
             <header>
               <h4>Trabalhe conosco</h4>
-              <h3>Você cuidador ou profissional da saúde, venha trabalhar na empresa que mais cresce no segmento, seja parte da família GBC (Grupo Bem Cuidar).</h3>
-              <p>*Entre no grupo do seu Estado e envie seu currículo</p>
+              <h3>Você cuidador ou profissional de enfermagem, venha trabalhar na empresa que mais cresce no segmento, seja parte da família GBC (Grupo Bem Cuidar).</h3>
+              <p>*Entre no grupo e envie seu currículo</p>
             </header>
 
             <div className="content">
 
               <a className="button" href="https://chat.whatsapp.com/Co6FxoGM8e2HN1zNjJ9dyX" target="_blank">
                 <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
-                Rio de Janeiro
-              </a>
-              <a className="button" href="https://chat.whatsapp.com/B52HObo19Gs0guVQFz0vSO" target="_blank">
-                <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
-                São Paulo
-              </a>
-              <a className="button" href="https://chat.whatsapp.com/DFE16VB3BQ6509Xf6w4XrT" target="_blank">
-                <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
-                Brasília
-              </a>
-              <a className="button" href="https://chat.whatsapp.com/B9fJobNwwrGDejoHnJQadO" target="_blank">
-                <img src="./src/assets/whatsapp-outlied-white.png" alt="Ícone reprensentando o whatsapp" />
-                Espírito Santo
+                Envie seu currículo
               </a>
             </div>
           </div>
           <div className="col-b">
-          <img className='notebook' src="./src/assets/handshake-close-up-of-executives.jpg" alt="Imagem de um aperto de mão." />
-           
+            <img className='notebook' src="./src/assets/handshake-close-up-of-executives.jpg" alt="Imagem de um aperto de mão." />
+
           </div>
 
 

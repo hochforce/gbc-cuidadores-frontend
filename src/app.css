@@ -441,9 +441,7 @@ body.menu-expanded .menu{
 
 /* ========SERVICES======== */
 
-#services header h2{
-  margin-bottom: 6rem;
-}
+
 
 #services .cards{
   display: flex;
@@ -491,8 +489,8 @@ body.menu-expanded .menu{
 #about {
   text-align: left;
   background-color: var(--brand-beige);
-  
-  gap: 30rem;
+  height: 108rem;
+  gap: 20rem;
 }
 #about h2 {
   margin-bottom: 2.4rem;
@@ -573,6 +571,9 @@ body.menu-expanded .menu{
 #about a.button{
   width: 40rem;
   font-size: 1.5rem;
+}
+#about .col-d p{
+  text-align: center;
 }
 
 /* ========CONTACT======== */
@@ -724,10 +725,6 @@ body.menu-expanded .menu{
   text-align: center;
   background-color: var(--brand-beige);
 }
-#hiring .wrapper{
-  
-}
-
 #hiring header{
   margin-bottom: 3.2rem;
   display: flex;
@@ -748,7 +745,6 @@ body.menu-expanded .menu{
   display: flex;
   flex-direction: column;
   align-itens: center;
-  
 }
 #hiring .content .button{
   padding: 1rem 1rem;
@@ -763,7 +759,7 @@ body.menu-expanded .menu{
   font-family: "DM Sans";
   text-transform: uppercase;
   cursor: pointer;
-  width: 25rem;
+  width: 26rem;
 
   display: flex;
   align-items: flex-start;
@@ -1177,23 +1173,24 @@ footer .social-links li a img {
   
   #services{
     padding: 11rem 0 0 0;
+    height: 91rem;
   }
   #services .wrapper{
     grid-template-columns: 60.5rem 1fr;
     grid-template-areas: 'B A';
     gap: 6.7rem;
+    padding: 0;
+    height: 80rem;
   }
   #services .col-b{
-    align-self: top;
-    width: 100%;
-    height: 100%;
+    align-self: center;
     background-image: url("./assets/old-woman-looking-at-caregiver.jpg");
     border-radius: 4px;
     width: 100%;
     height: 92%;
     background-repeat: no-repeat;
     background-size: 105rem;
-    background-position: center;
+    background-position: top;
   }
   #services .col-b img{
     width: 60.5rem;
@@ -1202,6 +1199,10 @@ footer .social-links li a img {
   #services h2{
     width: 47rem;
     margin-inline: auto;
+  }
+  #services .col-a{
+   
+    
   }
   #services .col-a h3{
     font-size: 3rem;
@@ -1223,28 +1224,53 @@ footer .social-links li a img {
   /* ========ABOUT======== */
   #about{
     padding: 11rem 0 0 0;
+    height: 96rem;
   }
   #about .wrapper {
-    grid-template-columns: 48rem 1fr;
-    grid-template-areas: 'A B';
-    gap: 6.7rem;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: 'C C' 'A B' 'D D';
+    gap: 1rem 6.7rem ;
+    
   }
   #about .col-a {
-    align-self: center;
+    align-self: top;
   }
-  #about .col-a h3{
-    font-size: 3rem;
-    font-weight: 700;
-  }
+  
   #about .col-a .content p{
     font-size: 2rem;
   }
   #about .col-b {
-    /* padding-top: 4rem; */
-    align-self: center;
+    align-self: top;
+  }
+  #about .col-b .procedures{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
   }
   #about .content p {
-    margin-bottom: 0;
+    font-size: 2rem;
+  }
+  #about .col-d,
+  #about .col-c{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  #about .col-c h3{
+    font-size: 3.7rem;
+    font-weight: 700;
+  }
+  #about .col-d{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  #about .col-d p{
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    
   }
   
   /* ========CONTACT======== */
@@ -1288,6 +1314,9 @@ footer .social-links li a img {
 
   /* ========HIRING======== */
 
+  #hiring{
+    height: 60rem;
+  }
   #hiring .wrapper {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'B A';
@@ -1318,7 +1347,7 @@ footer .social-links li a img {
     height: 70rem;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 115rem;
+    background-size: 80rem;
     background-position: -200px -100px;
     border-radius: 4px;
     padding: 5rem 30rem;
