@@ -485,7 +485,7 @@ function App() {
                   (21) 2042-4233
                 </li>
                 <li>
-                <i className="bi bi-whatsapp"></i>
+                <i className="bi bi-phone"></i>
                   (21) 99030-0876
                 </li>
                 <li>
